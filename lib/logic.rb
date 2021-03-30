@@ -5,25 +5,22 @@ require 'httparty'
 class Logic
   attr_reader :current_reader
 
-  VALIDGENRES = ['Travel', 'Mystery', 'Historical Fiction', 'Sequential Art',
-                 'Classics', 'Philosophy', 'Romance', 'Womens Fiction',
-                 'Fiction', 'Childrens', 'Religion', 'Nonfiction', 'Music',
-                 'Default', 'Science Fiction',
-                 'Sports and Games', 'Add a comment', 'Fantasy',
-                 'New Adult',
-                 'Young Adult', 'Science', 'Poetry', 'Paranormal',
-                 'Art', 'Psychology',
-                 'Autobiography', 'Parenting', 'Adult Fiction', 'Humor',
-                 'Horror',
-                 'History', 'Food and Drink', 'Christian Fiction',
-                 'Business',
-                 'Biography', 'Thriller', 'Contemporary',
-                 'Spirituality', 'Academic',
-                 'Self Help', 'Historical', 'Christian', 'Suspense',
-                 'Short Stories', 'Novels', 'Health', 'Politics',
-                 'Cultural',
-                 'Erotica',
-                 'Crime'].freeze
+  VALIDGENRES = ['travel', 'mystery', 'historical fiction', 'sequential art',
+                 'classics', 'philosophy', 'romance', 'womens fiction',
+                 'fiction', 'childrens', 'religion', 'nonfiction', 'music',
+                 'default', 'science fiction',
+                 'sports and games', 'add a comment', 'fantasy', 'new adult',
+                 'young adult', 'science', 'poetry', 'paranormal',
+                 'art', 'psychology',
+                 'autobiography', 'parenting', 'adult fiction', 'humor',
+                 'horror',
+                 'history', 'food and drink', 'christian fiction',
+                 'business',
+                 'biography', 'thriller', 'contemporary',
+                 'spirituality', 'academic',
+                 'self help', 'historical', 'christian', 'suspense',
+                 'short stories', 'novels', 'health', 'politics', 'cultural',
+                 'erotica', 'crime'].freeze
 
   def initialize(current_reader)
     @reader = current_reader
@@ -39,7 +36,7 @@ class Logic
 
   def book_url(input_genre, index)
     # home_url = 'https://books.toscrape.com/catalogue/category/books'
-    input_string = input_genre.downcase
+    input_string = input_genre.downcase.sub(/\s/, '-')
     index_string = index.to_s
     "https://books.toscrape.com/catalogue/category/books/#{input_string}_#{index_string}/index.html"
   end

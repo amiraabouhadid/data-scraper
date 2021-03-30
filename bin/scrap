@@ -11,8 +11,8 @@ class Interface
 
   def user_input
     @logic = Logic.new(@current_reader)
-    puts "#{@current_reader}, please enter book genre:"
-    input_genre = gets.chomp.to_s
+    puts "#{@current_reader},please enter book genre:"
+    input_genre = gets.chomp.to_s.downcase
 
     if @logic.valid_genre?(input_genre)
       index = @logic.genre_index(input_genre)
