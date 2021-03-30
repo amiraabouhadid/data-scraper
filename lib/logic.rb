@@ -38,20 +38,21 @@ class Logic
   end
 
   def book_url(input_genre, index)
-    home_url = 'https://books.toscrape.com/catalogue/category/books'
-    "#{home_url}/#{input_genre}_#{index}/index.html"
+    # home_url = 'https://books.toscrape.com/catalogue/category/books'
+    input_string = input_genre.downcase
+    index_string = index.to_s
+    "https://books.toscrape.com/catalogue/category/books/#{input_string}_#{index_string}/index.html"
   end
 
   def search(url)
     unparsed_page = HTTParty.get(url)
     parse_page = Nokogiri::HTML(unparsed_page.body)
-    books = parse_page.css('h3')
+    books = parse_page.css('article.product_pod')
     arr = []
     books.each do |book|
-      books = Books.New
-      books.title = book.css('a.text').text
+      books = Books.new
+      books.title = book.css('h3').text
       books.price = book.css('p.price_color').text
-      books.stock = book.css('p.instock availability').text
       arr.push(books)
     end
     arr

@@ -4,21 +4,21 @@ require_relative '../lib/logic'
 class Interface
   def initialize
     puts 'Welcome to Book Scraper'
+    puts 'What is your name?'
+    @current_reader = gets.chomp
     user_input
   end
 
   def user_input
-    puts 'What is your name?'
-    current_reader = gets.chomp
-    @logic = Logic.new(current_reader)
-    puts "#{current_reader}, enter book genre:"
-    input_genre = gets.chomp
+    @logic = Logic.new(@current_reader)
+    puts "#{@current_reader}, please enter book genre:"
+    input_genre = gets.chomp.to_s
 
     if @logic.valid_genre?(input_genre)
       index = @logic.genre_index(input_genre)
       url = @logic.book_url(input_genre, index)
       @logic.search(url).each do |book|
-        puts "#{book.title} , #{book.price} , #{book.stock}\n"
+        puts "#{book.title} , #{book.price}\n"
       end
     else
       puts 'Sorry, genre unavailable.'

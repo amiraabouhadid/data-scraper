@@ -1,3 +1,3 @@
 class Books
-  attr_accessor :title, :price, :stock
+  attr_accessor :title, :price
 end
