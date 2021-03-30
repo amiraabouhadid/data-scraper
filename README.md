@@ -26,7 +26,7 @@ To get a local copy up and running follow these simple example steps:
 - To run the scraper again, re-enter ./bin/scrap.rb into the console/terminal.
 
 ### Rspec
-- To run the tests in the scrap_rspec.rb file run rspec in the terminal.
+- To run the tests in the scrap_rspec.rb file enter rspec in the terminal.
 
 ### Setup
 Clone repository from github to your local drive by following these steps:
