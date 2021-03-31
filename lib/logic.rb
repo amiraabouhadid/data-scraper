@@ -35,8 +35,7 @@ class Logic
   end
 
   def book_url(input_genre, index)
-    # home_url = 'https://books.toscrape.com/catalogue/category/books'
-    input_string = input_genre.downcase.sub(/\s/, '-')
+    input_string = input_genre.downcase.gsub(/\s/, '-')
     index_string = index.to_s
     "https://books.toscrape.com/catalogue/category/books/#{input_string}_#{index_string}/index.html"
   end

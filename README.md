@@ -44,6 +44,8 @@ Clone repository from github to your local drive by following these steps:
 ### Install
 - Install Atom or Microsoft Visual Studio text editor to view the code on your local machine.
 - Install Git.
+- Install Nokogiri and HTTParty using gem install nokogiri and gem install httparty respectively in the terminal/console.
+- Install rspec by entering gem install rspec in the terminal/console.
 
 ## AUTHORS
 
@@ -51,7 +53,7 @@ Clone repository from github to your local drive by following these steps:
 
 - GitHub: [@amiraabouhadid](https://github.com/amiraabouhadid)
 - Twitter: [@AbouhadidAmira](https://twitter.com/AbouhadidAmira)
-- LinkedIn: [amira-abouhadid](https://linkedin.com/amira-abouhadid)
+- LinkedIn: [amira-abouhadid](https://www.linkedin.com/in/amira-abouhadid-229977200)
 
 
 ## 🤝 Contributing
