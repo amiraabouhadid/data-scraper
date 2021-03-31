@@ -1,2 +1,29 @@
 #!/usr/bin/env ruby
-puts 'hellow'
+require_relative '../lib/logic'
+
+class Interface
+  def initialize
+    puts 'Welcome to Book Scraper'
+    puts 'What is your name?'
+    @current_reader = gets.chomp
+    user_input
+  end
+
+  def user_input
+    @logic = Logic.new(@current_reader)
+    puts "#{@current_reader},please enter book genre:"
+    input_genre = gets.chomp.to_s.downcase
+
+    if @logic.valid_genre?(input_genre)
+      index = @logic.genre_index(input_genre)
+      url = @logic.book_url(input_genre, index)
+      @logic.search(url).each do |book|
+        puts "#{book.title} , #{book.price}\n"
+      end
+    else
+      puts 'Sorry, genre unavailable.'
+      user_input
+    end
+  end
+end
+Interface.new
