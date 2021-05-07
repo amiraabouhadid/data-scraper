@@ -2,7 +2,7 @@
 
 # RUBY CAPSTONE PROJECT: SCRAPER
 
-I was asked to create a data scraper. A scraper that fetched book price and title from https://books.toscrape.com/index.html was created. You can now search for books and their respective prices from over 20 genres!
+A data scraper that fetches book price and title from https://books.toscrape.com/index.html. You can now search for books and their respective prices from over 20 genres!
 ![Screenshot from 2021-03-30 19-09-39](https://user-images.githubusercontent.com/56790126/113028531-aafb2700-918b-11eb-8ad9-05737049e32f.png)
 
 ## Built With
